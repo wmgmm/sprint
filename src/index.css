@@ -1,0 +1,82 @@
+@import "tailwindcss";
+
+:root {
+  --bg-page:          #f5f5f7;
+  --bg-card:          #ffffff;
+  --text-primary:     #1d1d1f;
+  --text-secondary:   #86868b;
+  --text-tertiary:    #aeaeb2;
+  --apple-blue:       #0071e3;
+  --apple-blue-dark:  #005ec3;
+  --apple-green:      #34c759;
+  --apple-red:        #ff3b30;
+  --border:           rgba(0, 0, 0, 0.08);
+  --shadow-card:      0 4px 24px rgba(0,0,0,0.04);
+  --shadow-card-hover:0 8px 32px rgba(0,0,0,0.10);
+  --shadow-drawer:   -8px 0 40px rgba(0,0,0,0.12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100%;
+  background: var(--bg-page);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: var(--text-primary);
+}
+
+@layer utilities {
+  .glass {
+    background: rgba(255, 255, 255, 0.72);
+    backdrop-filter: saturate(180%) blur(20px);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    border-bottom: 1px solid var(--border);
+  }
+  .card {
+    background: var(--bg-card);
+    border-radius: 16px;
+    box-shadow: var(--shadow-card);
+    transition: box-shadow 0.2s ease;
+  }
+  .card:hover {
+    box-shadow: var(--shadow-card-hover);
+  }
+  .btn-primary {
+    background: var(--apple-blue);
+    color: #fff;
+    border-radius: 980px;
+    font-weight: 600;
+    font-size: 14px;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.15s ease, transform 0.1s ease;
+  }
+  .btn-primary:hover {
+    background: var(--apple-blue-dark);
+  }
+  .btn-primary:active {
+    transform: scale(0.97);
+  }
+  .btn-secondary {
+    background: rgba(0, 113, 227, 0.10);
+    color: var(--apple-blue);
+    border-radius: 980px;
+    font-weight: 600;
+    font-size: 14px;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.15s ease;
+  }
+  .btn-secondary:hover {
+    background: rgba(0, 113, 227, 0.18);
+  }
+}
