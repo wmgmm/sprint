@@ -130,7 +130,7 @@ export function Storefront() {
           <motion.div
             layout
             className="grid gap-4"
-            style={{ gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))' }}
+            style={{ gridTemplateColumns: 'repeat(auto-fill, minmax(min(320px, 100%), 1fr))' }}
           >
             <AnimatePresence mode="popLayout">
               {filtered.map(uc => (

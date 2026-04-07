@@ -1,3 +1,4 @@
+import React from 'react';
 import { motion } from 'framer-motion';
 import { useAppStore } from '../../store/useAppStore';
 import { CATEGORIES } from '../../data/categories';
@@ -11,7 +12,7 @@ export function CategoryPills() {
   };
 
   return (
-    <div className="flex gap-2 overflow-x-auto pb-1" style={{ scrollbarWidth: 'none' }}>
+    <div className="hide-scrollbar flex gap-2 overflow-x-auto pb-1" style={{ WebkitOverflowScrolling: 'touch' } as React.CSSProperties}>
       <motion.button
         layout
         whileTap={{ scale: 0.94 }}

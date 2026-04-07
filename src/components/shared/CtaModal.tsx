@@ -25,7 +25,7 @@ export function CtaModal() {
             exit={{ opacity: 0 }}
             onClick={() => setShowCtaModal(false)}
             className="fixed inset-0 z-40"
-            style={{ background: 'rgba(0,0,0,0.3)', backdropFilter: 'blur(4px)' }}
+            style={{ background: 'rgba(0,0,0,0.3)', backdropFilter: 'blur(4px)', WebkitBackdropFilter: 'blur(4px)' }}
           />
 
           <motion.div
@@ -34,8 +34,13 @@ export function CtaModal() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.96 }}
             transition={{ type: 'spring', stiffness: 300, damping: 30 }}
-            className="fixed inset-x-4 bottom-4 md:inset-auto md:left-1/2 md:top-1/2 md:-translate-x-1/2 md:-translate-y-1/2 md:max-w-lg z-50 rounded-2xl p-6"
-            style={{ background: 'var(--bg-card)', boxShadow: '0 20px 60px rgba(0,0,0,0.18)' }}
+            className="fixed inset-x-4 md:inset-auto md:left-1/2 md:top-1/2 md:-translate-x-1/2 md:-translate-y-1/2 md:max-w-lg z-50 rounded-2xl p-6 overflow-y-auto"
+            style={{
+              background: 'var(--bg-card)',
+              boxShadow: '0 20px 60px rgba(0,0,0,0.18)',
+              bottom: 'max(16px, env(safe-area-inset-bottom))',
+              maxHeight: 'calc(100dvh - 48px)',
+            }}
             role="dialog"
             aria-modal="true"
             aria-labelledby="cta-heading"

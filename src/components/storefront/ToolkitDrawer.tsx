@@ -37,7 +37,7 @@ export function ToolkitDrawer() {
             exit={{ opacity: 0 }}
             onClick={() => setToolkitOpen(false)}
             className="fixed inset-0 z-40"
-            style={{ background: 'rgba(0,0,0,0.25)', backdropFilter: 'blur(2px)' }}
+            style={{ background: 'rgba(0,0,0,0.25)', backdropFilter: 'blur(2px)', WebkitBackdropFilter: 'blur(2px)' }}
           />
 
           {/* Drawer panel */}
@@ -85,7 +85,7 @@ export function ToolkitDrawer() {
             </div>
 
             {/* Scrollable content */}
-            <div className="flex-1 overflow-y-auto px-4 py-3">
+            <div className="flex-1 overflow-y-auto px-4 py-3" style={{ overscrollBehavior: 'contain' }}>
               {savedCases.length === 0 ? (
                 <div className="flex flex-col items-center justify-center h-48 text-center">
                   <p className="text-3xl mb-3">🧰</p>

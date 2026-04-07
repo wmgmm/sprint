@@ -74,7 +74,8 @@ export function SwipeCard() {
         <span className="text-xs font-semibold" style={{ color: 'var(--apple-green)' }}>SAVE</span>
       </div>
 
-      <div className="relative w-full" style={{ height: 400 }}>
+      {/* Responsive height: up to 400px but shrinks on short screens */}
+      <div className="relative w-full" style={{ height: 'min(400px, calc(100dvh - 220px))' }}>
         {/* Next card shadow */}
         {nextCard && (
           <div
@@ -93,15 +94,20 @@ export function SwipeCard() {
           key={key}
           {...(bind() as object)}
           style={{
-            x, rotate, opacity,
-            borderColor,
+            x,
+            rotate,
+            opacity,
+            borderColor: borderColor as unknown as string,
             borderWidth: isDragging ? '2px' : '1px',
             borderStyle: 'solid',
+            background: 'var(--bg-card)',
             boxShadow: isDragging ? 'none' : 'var(--shadow-card-hover)',
+            // Ensure horizontal drag is captured, vertical scroll still works
+            touchAction: 'pan-y',
+            WebkitUserSelect: 'none',
+            userSelect: 'none',
           }}
-          className="absolute inset-0 rounded-2xl p-6 flex flex-col cursor-grab active:cursor-grabbing select-none"
-          // eslint-disable-next-line @typescript-eslint/no-explicit-any
-          {...{ style: { x, rotate, opacity, borderColor: (borderColor as any), borderWidth: isDragging ? '2px' : '1px', borderStyle: 'solid', background: 'var(--bg-card)', boxShadow: isDragging ? 'none' : 'var(--shadow-card-hover)' } } as object}
+          className="absolute inset-0 rounded-2xl p-6 flex flex-col cursor-grab active:cursor-grabbing"
         >
           {/* Card number + category */}
           <div className="flex items-center justify-between mb-4">

@@ -30,6 +30,22 @@ html, body, #root {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: var(--text-primary);
+  /* Suppress tap highlight on all browsers including Samsung Internet */
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Suppress tap highlight on all interactive elements */
+button, a, input, [role="button"] {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Hide scrollbars cross-browser (used on CategoryPills, drawer, etc.) */
+.hide-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
 }
 
 @layer utilities {
@@ -54,6 +70,8 @@ html, body, #root {
     border-radius: 980px;
     font-weight: 600;
     font-size: 14px;
+    /* 44px min touch target */
+    min-height: 44px;
     padding: 10px 20px;
     border: none;
     cursor: pointer;
@@ -71,12 +89,16 @@ html, body, #root {
     border-radius: 980px;
     font-weight: 600;
     font-size: 14px;
+    /* 44px min touch target */
+    min-height: 44px;
     padding: 10px 20px;
-    border: none;
+    /* Visible border so it reads as a button on mobile */
+    border: 1.5px solid rgba(0, 113, 227, 0.30);
     cursor: pointer;
-    transition: background 0.15s ease;
+    transition: background 0.15s ease, border-color 0.15s ease;
   }
   .btn-secondary:hover {
     background: rgba(0, 113, 227, 0.18);
+    border-color: rgba(0, 113, 227, 0.45);
   }
 }

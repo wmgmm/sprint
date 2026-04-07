@@ -61,7 +61,7 @@ export function SprintResults() {
           <button
             onClick={initSprint}
             className="flex-1 rounded-full py-3 text-sm font-semibold transition-colors"
-            style={{ background: 'rgba(0,0,0,0.06)', color: 'var(--text-primary)', border: 'none' }}
+            style={{ background: 'rgba(0,0,0,0.06)', color: 'var(--text-primary)', border: '1px solid var(--border)' }}
           >
             Sprint Again
           </button>
@@ -97,8 +97,8 @@ export function SprintResults() {
                   <p className="text-xs font-mono leading-relaxed flex-1" style={{ color: 'var(--text-primary)' }}>{uc.prompt}</p>
                   <button
                     onClick={() => copyPrompt(uc.id, uc.prompt)}
-                    className="text-xs font-medium shrink-0 transition-colors"
-                    style={{ color: copiedId === uc.id ? 'var(--apple-green)' : 'var(--apple-blue)' }}
+                    className="text-xs font-medium shrink-0 transition-colors px-2 py-1.5 rounded-lg"
+                    style={{ color: copiedId === uc.id ? 'var(--apple-green)' : 'var(--apple-blue)', background: 'none', border: 'none', cursor: 'pointer' }}
                   >
                     {copiedId === uc.id ? '✓ Copied' : 'Copy'}
                   </button>
