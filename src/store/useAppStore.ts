@@ -58,15 +58,18 @@ export const useAppStore = create<AppState>()(
       timerSeconds: SPRINT_DURATION_SECONDS,
       isTimerRunning: false,
 
-      initSprint: () => set({
-        shuffledCases: shuffle(useCases),
-        currentCardIndex: 0,
-        discardedIds: new Set(),
-        timerSeconds: SPRINT_DURATION_SECONDS,
-        isTimerRunning: true,
-        view: 'sprint',
-        // Note: savedCases intentionally NOT reset - unified basket
-      }),
+      initSprint: () => {
+        const savedIds = new Set(get().savedCases.map(s => s.id));
+        const unsaved = useCases.filter(uc => !savedIds.has(uc.id));
+        set({
+          shuffledCases: shuffle(unsaved),
+          currentCardIndex: 0,
+          discardedIds: new Set(),
+          timerSeconds: SPRINT_DURATION_SECONDS,
+          isTimerRunning: true,
+          view: 'sprint',
+        });
+      },
 
       swipeRight: () => {
         const { shuffledCases, currentCardIndex, savedCases } = get();

@@ -31,7 +31,7 @@ export function SprintResults() {
       className="min-h-screen px-5 py-8"
       style={{ background: 'var(--bg-page)', paddingTop: 'max(32px, env(safe-area-inset-top))' }}
     >
-      <div className="max-w-lg mx-auto">
+      <div className="max-w-lg lg:max-w-xl mx-auto">
         {/* Stats */}
         <div className="text-center mb-8">
           <h1 className="text-3xl font-bold mb-1" style={{ color: 'var(--text-primary)', letterSpacing: '-0.02em' }}>
@@ -90,11 +90,11 @@ export function SprintResults() {
                   >
                     {uc.cat}
                   </span>
-                  <span className="text-sm font-semibold" style={{ color: 'var(--text-primary)' }}>{uc.title}</span>
+                  <span className="text-sm lg:text-base font-semibold" style={{ color: 'var(--text-primary)' }}>{uc.title}</span>
                 </div>
-                <p className="text-xs mb-3" style={{ color: 'var(--text-secondary)' }}>{uc.desc}</p>
+                <p className="text-xs lg:text-sm mb-3" style={{ color: 'var(--text-secondary)' }}>{uc.desc}</p>
                 <div className="rounded-xl p-3 flex items-start justify-between gap-2" style={{ background: 'var(--bg-page)' }}>
-                  <p className="text-xs font-mono leading-relaxed flex-1" style={{ color: 'var(--text-primary)' }}>{uc.prompt}</p>
+                  <p className="text-xs lg:text-sm font-mono leading-relaxed flex-1" style={{ color: 'var(--text-primary)' }}>{uc.prompt}</p>
                   <button
                     onClick={() => copyPrompt(uc.id, uc.prompt)}
                     className="text-xs font-medium shrink-0 transition-colors px-2 py-1.5 rounded-lg"

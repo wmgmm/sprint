@@ -112,7 +112,7 @@ export function Storefront() {
 
       {/* Results count */}
       <div className="max-w-6xl mx-auto px-4 pt-4 pb-1">
-        <p className="text-xs" style={{ color: 'var(--text-tertiary)' }}>
+        <p className="text-xs lg:text-sm" style={{ color: 'var(--text-tertiary)' }}>
           {filtered.length} prompt{filtered.length !== 1 ? 's' : ''}
           {(searchQuery || activeFilters.size > 0) ? ' found' : ' available'}
         </p>
@@ -130,7 +130,7 @@ export function Storefront() {
           <motion.div
             layout
             className="grid gap-4"
-            style={{ gridTemplateColumns: 'repeat(auto-fill, minmax(min(320px, 100%), 1fr))' }}
+            style={{ gridTemplateColumns: 'repeat(auto-fill, minmax(min(340px, 100%), 1fr))' }}
           >
             <AnimatePresence mode="popLayout">
               {filtered.map(uc => (

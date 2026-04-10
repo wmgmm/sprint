@@ -67,7 +67,7 @@ export function SwipeCard() {
   const catColor = CATEGORY_COLOR[card.cat];
 
   return (
-    <div className="flex flex-col items-center gap-4 w-full max-w-sm mx-auto">
+    <div className="flex flex-col items-center gap-4 w-full max-w-sm lg:max-w-md mx-auto">
       {/* Direction hints */}
       <div className="flex justify-between w-full px-2">
         <span className="text-xs font-semibold" style={{ color: 'var(--apple-red)' }}>SKIP</span>
@@ -75,7 +75,7 @@ export function SwipeCard() {
       </div>
 
       {/* Responsive height: up to 400px but shrinks on short screens */}
-      <div className="relative w-full" style={{ height: 'min(400px, calc(100dvh - 220px))' }}>
+      <div className="relative w-full" style={{ height: 'min(480px, calc(100dvh - 200px))' }}>
         {/* Next card shadow */}
         {nextCard && (
           <div
@@ -121,12 +121,12 @@ export function SwipeCard() {
           </div>
 
           {/* Title */}
-          <h2 className="text-xl font-bold mb-2 leading-tight" style={{ color: 'var(--text-primary)' }}>
+          <h2 className="text-xl lg:text-2xl font-bold mb-2 leading-tight" style={{ color: 'var(--text-primary)' }}>
             {card.title}
           </h2>
 
           {/* Description */}
-          <p className="text-sm mb-4" style={{ color: 'var(--text-secondary)' }}>
+          <p className="text-sm lg:text-base mb-4" style={{ color: 'var(--text-secondary)' }}>
             {card.desc}
           </p>
 
@@ -135,10 +135,10 @@ export function SwipeCard() {
             className="rounded-xl p-3 flex-1 flex flex-col min-h-0"
             style={{ background: 'var(--bg-page)' }}
           >
-            <p className="text-[10px] uppercase tracking-widest mb-1.5 font-semibold" style={{ color: 'var(--text-tertiary)' }}>
+            <p className="text-[10px] lg:text-xs uppercase tracking-widest mb-1.5 font-semibold" style={{ color: 'var(--text-tertiary)' }}>
               Prompt
             </p>
-            <p className="text-xs font-mono leading-relaxed overflow-auto flex-1" style={{ color: 'var(--text-primary)' }}>
+            <p className="text-xs lg:text-sm font-mono leading-relaxed overflow-auto flex-1" style={{ color: 'var(--text-primary)' }}>
               {card.prompt}
             </p>
           </div>

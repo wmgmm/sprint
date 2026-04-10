@@ -46,12 +46,12 @@ export function PromptCard({ uc }: Props) {
       </div>
 
       {/* Title */}
-      <h3 className="text-base font-bold mb-1.5 leading-snug" style={{ color: 'var(--text-primary)' }}>
+      <h3 className="text-base lg:text-lg font-bold mb-1.5 leading-snug" style={{ color: 'var(--text-primary)' }}>
         {uc.title}
       </h3>
 
       {/* Description */}
-      <p className="text-sm mb-4 flex-1" style={{ color: 'var(--text-secondary)', lineHeight: 1.55 }}>
+      <p className="text-sm lg:text-base mb-4 flex-1" style={{ color: 'var(--text-secondary)', lineHeight: 1.55 }}>
         {uc.desc}
       </p>
 
@@ -60,10 +60,10 @@ export function PromptCard({ uc }: Props) {
         className="rounded-xl p-3 mb-4 relative group"
         style={{ background: 'var(--bg-page)' }}
       >
-        <p className="text-[10px] font-semibold uppercase tracking-widest mb-1.5" style={{ color: 'var(--text-tertiary)' }}>
+        <p className="text-[10px] lg:text-xs font-semibold uppercase tracking-widest mb-1.5" style={{ color: 'var(--text-tertiary)' }}>
           Prompt
         </p>
-        <p className="text-xs font-mono leading-relaxed line-clamp-3" style={{ color: 'var(--text-primary)' }}>
+        <p className="text-xs lg:text-sm font-mono leading-relaxed line-clamp-3 lg:line-clamp-4" style={{ color: 'var(--text-primary)' }}>
           {uc.prompt}
         </p>
         <button

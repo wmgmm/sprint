@@ -43,7 +43,7 @@ export function LandingPage() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.2, duration: 0.4 }}
-          className="text-lg max-w-xs mb-2"
+          className="text-lg max-w-xs lg:max-w-sm mb-2"
           style={{ color: 'var(--text-secondary)' }}
         >
           {useCases.length} AI use cases. 5 minutes. Your AI toolkit, built.
@@ -53,7 +53,7 @@ export function LandingPage() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.3, duration: 0.4 }}
-          className="text-sm max-w-sm mb-10"
+          className="text-sm max-w-sm lg:max-w-md mb-10"
           style={{ color: 'var(--text-tertiary)' }}
         >
           Swipe right to save, left to skip. Or browse all prompts at your own pace.
